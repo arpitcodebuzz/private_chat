@@ -8,7 +8,7 @@ import roomRoutes from "./src/routes/room.routes.js";
 import errorMiddleware from "./src/middlewares/error.middleware.js";
 const origins = process.env.CORS_ORIGIN
   ? process.env.CORS_ORIGIN.split(",").map((s) => s.trim())
-  : ["http://localhost:5173"];
+  : ["http://localhost:5173","https://pk9054.vercel.app"];
 const app = express();
 
 // Trust proxy (useful when deployed behind reverse proxy like Render/Railway/Nginx)

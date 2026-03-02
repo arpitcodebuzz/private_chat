@@ -21,7 +21,7 @@ const server = http.createServer(app);
 // 3) Attach Socket.IO to the HTTP server
 const origins = process.env.CORS_ORIGIN
   ? process.env.CORS_ORIGIN.split(",").map((s) => s.trim())
-  : ["http://localhost:5173"];
+  : ["http://localhost:5173","https://pk9054.vercel.app"];
 
 const io = new Server(server, {
   cors: {
