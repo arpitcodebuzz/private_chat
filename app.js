@@ -25,14 +25,12 @@ app.use(
 app.use(express.json({ limit: "50kb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// Health check
-app.get("/health", (req, res) => {
-  res.status(200).json({ success: true, message: "OK" });
-});
-
 // Routes
 app.use("/api/rooms", roomRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({ success: true, message: "OK server is running" });
+})
 //health check
 app.get("/health", (req, res) => {
   res.status(200).json({ success: true, message: "OK server is healthy" });
