@@ -18,8 +18,8 @@ app.set("trust proxy", 1);
 app.use(helmet());
 app.use(
   cors({
-    origin: origins,
-    credentials: true,
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 app.use(express.json({ limit: "50kb" }));
