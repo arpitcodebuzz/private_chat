@@ -71,7 +71,7 @@ export const joinRoom = async (req, res, next) => {
     const senderName = String(nickname).trim();
 
     const room = await Room.findOne({ name: roomName });
-    if (!room) throw new AppError("Room not found", 404);
+    if (!room) throw new AppError("रूम का नाम सही से डालें", 404);
 
     if (room.rawPassword !== pass) {
       throw new AppError("Wrong room password", 401);
